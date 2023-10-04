@@ -71,4 +71,72 @@ const departments = {
     }
 }
 
-console.log(departments);
+// console.log(departments);
+// console.log("de afdeling sales heeft " + departments.sales.numberOfEmployees +  " medewerkers"); 1a
+// console.log(" Marketing is een leuke afdeling om te werken. " + departments.marketing.description); 1b
+// console.log(`De afdeling Customer Service heeft ${departments["customer-service"].numberOfEmployees} medewerkers`)1c
+// console.log(departments.sales.jobs[1].description); 1d
+
+// 2a/2b/2c
+const userInput = prompt('Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service');
+console.log(userInput);
+
+switch (userInput) {
+    case 'marketing':
+        console.log(`Je koos ${userInput}. ${departments.marketing.description}`)
+        break;
+    case 'sales':
+        console.log(`Je koos ${userInput}. ${departments.sales.description}`)
+        break;
+    case 'customer-service':
+        console.log(`Je koos ${userInput}. ${departments["customer-service"].description}`)
+        break;
+    default:
+        console.error('Ongeldige keuze');
+}
+
+const jobchoice = prompt(`je koos marketing, over welke functie wil je meer weten? voer een getal tussen 0 en 4 in. 0: ${departments.marketing.jobs[0].title} 1: ${departments.marketing.jobs[1]
+    .title} 2: ${departments.marketing.jobs[2].title} 3: ${departments.marketing.jobs[3].title} 4: ${departments.marketing.jobs[4].title}`)
+
+switch (jobChoice) {
+    case '0':
+        console.log('Je koos ' + departments.marketing.jobs[0].title + ' Een uitdagende rol!' + departments.marketing.jobs[0].description);
+        break;
+    case '1':
+        console.log('Je koos ' + departments.marketing.jobs[1].title + ' Een uitdagende rol!' + departments.marketing.jobs[1].description);
+        break;
+    case '2':
+        console.log('Je koos ' + departments.marketing.jobs[2].title + ' Een uitdagende rol!' + departments.marketing.jobs[2].description);
+        break;
+    case '3':
+        console.log('Je koos ' + departments.marketing.jobs[3].title + ' Een uitdagende rol!' + departments.marketing.jobs[3].description);
+        break;
+    case '4':
+        console.log('Je koos ' + departments.marketing.jobs[4].title + ' Een uitdagende rol!' + departments.marketing.jobs[4].description);
+        break;
+    default:
+        console.error('Mag niet')
+
+ }
+
+
+console.log(userInput + " is een leuke afdeling om te werken. Er werken op dit moment " + departments[userInput].numberOfEmployees + " medewerkers.")
+
+const choice = prompt('Je koos ' + userInput + '. ' + "Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in. 0: " + departments[userInput].jobs[0].title + ', 1: ' + departments[userInput].jobs[1].title + ', 2: ' + departments[userInput].jobs[2].title + ', 3: ' + departments[userInput].jobs[3].title)
+
+console.log(choice);
+
+switch (choice){
+    case "0":
+        console.log("je koos " + departments[userInput].jobs[0].title + ", " + departments[userInput].jobs[0].description);
+        break
+    case "1":
+        console.log("je koos " + departments[userInput].jobs[1].title + ", " + departments[userInput].jobs[1].description);
+        break
+    case "2":
+        console.log("je koos " + departments[userInput].jobs[2].title + ", " + departments[userInput].jobs[2].description);
+        break
+    case"3":
+        console.log("je koos " + departments[userInput].jobs[3].title + ", " + departments[userInput].jobs[3].description);
+        break
+}
